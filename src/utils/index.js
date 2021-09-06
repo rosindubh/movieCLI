@@ -1,10 +1,10 @@
 exports.goodOrBad = (likeVar, movie, actor, year) => {
   if (actor && year) {
-    if (likeVar === "good" || likeVar ==="Good") {
+    if (likeVar.toLowerCase() === "good") {
       console.clear();
       console.log(`I think ${movie} is a great movie and ${actor} plays part well.`);
       console.log(`This film was made in the year ${year}`)
-    } else if (likeVar=== "bad" || likeVar==="Bad") {
+    } else if (likeVar.toLowerCase()=== "bad") {
         console.clear();
         console.log(`I think ${movie} made in the year ${year } is bad and ${actor} can't act for toffee.`);
     } else {
