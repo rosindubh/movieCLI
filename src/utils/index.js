@@ -1,16 +1,21 @@
 
 
 exports.goodOrBad = (likeVar, movie, actor, year) => {
-
-  
-
+  if (year) {
     if (likeVar === "good") {
-      console.log(`I think ${movie} is good and ${actor} plays part well`);
+      console.clear();
+      console.log(`I think ${movie} is great movie and ${actor} plays part well.`);
       console.log(`This film was made in the year ${year}`)
     } else if (likeVar=== "bad") {
-        console.log(`I think ${movie} is bad and ${actor} can't act for toffee`);
+        console.clear();
+        console.log(`I think ${movie} made in the year ${year } is bad and ${actor} can't act for toffee`);
     } else {
       console.log("Incorrect Input")
     }
   }
+  else {
+    console.log('You must enter a year.')
+  }
+  }
+
 
