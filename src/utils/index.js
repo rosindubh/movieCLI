@@ -1,5 +1,5 @@
 exports.goodOrBad = (likeVar, movie, actor, year) => {
-  if (actor && year) {
+  if (likeVar && movie && actor && year) {
     if (likeVar.toLowerCase() === "good") {
       console.clear();
       console.log(`I think ${movie} is a great movie and ${actor} plays part well.`);
@@ -15,7 +15,7 @@ exports.goodOrBad = (likeVar, movie, actor, year) => {
   else {
     var myArgs = process.argv.slice(2);
     console.clear();
-    console.log('You must enter both an actor and a year.');
+    console.log('Not enough variables...');
     console.log(`You entered the following:`);
     console.log(`\n[${myArgs}]\n`)
   }
