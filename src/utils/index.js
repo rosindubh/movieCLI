@@ -1,5 +1,3 @@
-
-
 exports.goodOrBad = (likeVar, movie, actor, year) => {
   if (actor && year) {
     if (likeVar === "good") {
@@ -10,19 +8,17 @@ exports.goodOrBad = (likeVar, movie, actor, year) => {
         console.clear();
         console.log(`I think ${movie} made in the year ${year } is bad and ${actor} can't act for toffee.`);
     } else {
-      console.log("Incorrect Input")
+      console.log(`Incorrect Input ${myArgs}`)
+
     }
   }
   else {
+    var myArgs = process.argv.slice(2);
     console.clear();
     console.log('You must enter both an actor and a year.');
     console.log(`You entered the following:`);
-    console.log();
-    console.log(`Did you like it: ${likeVar}`);
-    console.log(`Movie: ${movie}`);
-    console.log(`Actor: ${actor}`);
-    console.log(`Year: ${year}`);
+    console.log(`\n[${myArgs}]\n`)
   }
-  }
+}
 
 
