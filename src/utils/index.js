@@ -1,6 +1,16 @@
+const fs = require('fs');
+
+const addMovie = (likeVar, movie, actor, year) => {
+  const list = JSON.parse(fs.readFileSync("./storage.json"));
+  list.push({name: movie, likeVar: likeVar, actor: actor, year: year})
+  const stringList = JSON.stringify(list)
+  fs.writeFileSync("./storage.json", stringList)
+}
+
 exports.goodOrBad = (likeVar, movie, actor, year) => {
   if (likeVar && movie && actor && year) {
     if (likeVar.toLowerCase() === "good") {
+      addMovie(likeVar, movie, actor, year)
       console.clear();
       console.log(`I think ${movie} is a great movie and ${actor} plays part well.`);
       console.log(`This film was made in the year ${year}`)
