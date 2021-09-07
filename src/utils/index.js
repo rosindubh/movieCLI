@@ -1,15 +1,15 @@
 const fs = require('fs');
 
 const addMovie = (likeVar, movie, actor, year) => {
-  const list = JSON.parse(fs.readFileSync("../storage.json"));
+  const list = JSON.parse(fs.readFileSync("./storage.json"));
   list.push({name: movie, likeVar: likeVar, actor: actor, year: year})
   const stringList = JSON.stringify(list)
-  fs.writeFileSync("../storage.json", stringList)
+  fs.writeFileSync("./storage.json", stringList)
 }
 
 const listDb = (item) => {
   console.log('Current Db contents...')
-  const list = JSON.parse(fs.readFileSync("../storage.json"));
+  const list = JSON.parse(fs.readFileSync("./storage.json"));
   for (let i = 0; i < list.length; i++) {
     console.log(list[i])
   }
